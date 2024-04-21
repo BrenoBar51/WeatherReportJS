@@ -24,7 +24,7 @@ async function getWeatherData(city) {
   const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIkey}`;
   const response = await fetch(apiUrl);
 
-  if(!response.ok) {
+  if (!response.ok) {
     throw new Error("Could not fetch weather data");
   }
 
@@ -39,11 +39,11 @@ function displayWeatherInfo(data) {
   card.textContent = "";
   card.style.display = "flex";
 
-  const cityDisplay = decument.createElement("h1");
-  const tempDisplay = decument.createElement("p");
-  const humidityDisplay = decument.createElement("p");
-  const descDisplay = decument.createElement("p");
-  const weatherEmoji = decument.createElement("p");
+  const cityDisplay = document.createElement("h1");
+  const tempDisplay = document.createElement("p");
+  const humidityDisplay = document.createElement("p");
+  const descDisplay = document.createElement("p");
+  const weatherEmoji = document.createElement("p");
 
   cityDisplay.textContent = city;
   tempDisplay.textContent = `${(temp - 273.15).toFixed(1)}°C`;
@@ -55,8 +55,8 @@ function displayWeatherInfo(data) {
   cityDisplay.classList.add("cityDisplay");
   tempDisplay.classList.add("temDisplay");
   humidityDisplay.classList.add("humidityDisplay");
-  descDisplay.createElement.add("descDisplay");
-  weatherEmoji.createElement.add("weatherEmoji");
+  descDisplay.classList.add("descDisplay");
+  weatherEmoji.classList.add("weatherEmoji");
 
   card.appendChild(cityDisplay);
   card.appendChild(tempDisplay);
